@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Payroll Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="form-wrapper">
+    <h2>Employee Payroll Form</h2>
+
+    <form action="/add" method="POST">
+
+        <!-- Name -->
+        <div class="form-row">
+            <label>Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="form-row">
+            <label>Profile Image</label>
+            <div class="profile-group">
+                <label>
+                    <input type="radio" name="profile" value="1">
+                    <img src="https://i.pravatar.cc/50?img=1">
+                </label>
+                <label>
+                    <input type="radio" name="profile" value="2">
+                    <img src="https://i.pravatar.cc/50?img=2">
+                </label>
+                <label>
+                    <input type="radio" name="profile" value="3">
+                    <img src="https://i.pravatar.cc/50?img=3">
+                </label>
+                <label>
+                    <input type="radio" name="profile" value="4">
+                    <img src="https://i.pravatar.cc/50?img=4">
+                </label>
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-row">
+            <label>Gender</label>
+            <div class="inline-group">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+        </div>
+
+        <!-- Department -->
+        <div class="form-row">
+            <label>Department</label>
+            <div class="inline-group">
+                <label><input type="checkbox" name="department" value="HR"> HR</label>
+                <label><input type="checkbox" name="department" value="Sales"> Sales</label>
+                <label><input type="checkbox" name="department" value="Finance"> Finance</label>
+                <label><input type="checkbox" name="department" value="Engineer"> Engineer</label>
+                <label><input type="checkbox" name="department" value="Others"> Others</label>
+            </div>
+        </div>
+
+        <!-- Salary -->
+        <div class="form-row">
+            <label>Salary</label>
+            <select name="salary" required>
+                <option value="">Select Salary</option>
+                <option value="10000">10000</option>
+                <option value="20000">20000</option>
+                <option value="30000">30000</option>
+                <option value="40000">40000</option>
+                <option value="50000">50000</option>
+            </select>
+        </div>
+
+        <!-- Start Date -->
+        <div class="form-row">
+            <label>Start Date</label>
+            <div class="inline-group">
+                <select name="day">
+                    <% for(let i=1;i<=31;i++){ %>
+                        <option><%= i %></option>
+                    <% } %>
+                </select>
+
+                <select name="month">
+                    <% const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; 
+                       months.forEach(m => { %>
+                        <option><%= m %></option>
+                    <% }) %>
+                </select>
+
+                <select name="year">
+                    <% for(let y=2020;y<=2030;y++){ %>
+                        <option><%= y %></option>
+                    <% } %>
+                </select>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-row">
+            <label>Notes</label>
+            <textarea name="notes" rows="4"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <a href="/" class="cancel">Cancel</a>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
