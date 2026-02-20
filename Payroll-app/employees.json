@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1771479026167,
+    "name": "Ashish Yadav",
+    "department": "HR",
+    "salary": 50000
+  },
+  {
+    "id": 1771479616269,
+    "name": "akhil",
+    "department": "Engineer",
+    "salary": 10000
+  },
+  {
+    "id": 1771491701265,
+    "name": "sakshi sharma",
+    "department": "Sales",
+    "salary": 40000
+  }
+]
