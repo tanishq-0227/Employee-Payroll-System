@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="form-wrapper">
+    <h2>Edit Employee</h2>
+
+    <form action="/edit/<%= employee.id %>" method="POST">
+
+        <!-- Name -->
+        <div class="form-row">
+            <label>Name</label>
+            <input type="text" name="name" value="<%= employee.name %>" required>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="form-row">
+            <label>Profile Image</label>
+            <div class="profile-group">
+
+                <label>
+                    <input type="radio" name="profile" value="1"
+                        <%= employee.profile == "1" ? "checked" : "" %>>
+                    <img src="https://i.pravatar.cc/50?img=1">
+                </label>
+
+                <label>
+                    <input type="radio" name="profile" value="2"
+                        <%= employee.profile == "2" ? "checked" : "" %>>
+                    <img src="https://i.pravatar.cc/50?img=2">
+                </label>
+
+                <label>
+                    <input type="radio" name="profile" value="3"
+                        <%= employee.profile == "3" ? "checked" : "" %>>
+                    <img src="https://i.pravatar.cc/50?img=3">
+                </label>
+
+                <label>
+                    <input type="radio" name="profile" value="4"
+                        <%= employee.profile == "4" ? "checked" : "" %>>
+                    <img src="https://i.pravatar.cc/50?img=4">
+                </label>
+
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-row">
+            <label>Gender</label>
+            <div class="inline-group">
+                <label>
+                    <input type="radio" name="gender" value="Male"
+                        <%= employee.gender == "Male" ? "checked" : "" %>>
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="Female"
+                        <%= employee.gender == "Female" ? "checked" : "" %>>
+                    Female
+                </label>
+            </div>
+        </div>
+
+        <!-- Department -->
+        <div class="form-row">
+            <label>Department</label>
+            <div class="inline-group">
+                <label>
+                    <input type="checkbox" name="department" value="HR"
+                        <%= employee.department.includes("HR") ? "checked" : "" %>>
+                    HR
+                </label>
+
+                <label>
+                    <input type="checkbox" name="department" value="Sales"
+                        <%= employee.department.includes("Sales") ? "checked" : "" %>>
+                    Sales
+                </label>
+
+                <label>
+                    <input type="checkbox" name="department" value="Finance"
+                        <%= employee.department.includes("Finance") ? "checked" : "" %>>
+                    Finance
+                </label>
+
+                <label>
+                    <input type="checkbox" name="department" value="Engineer"
+                        <%= employee.department.includes("Engineer") ? "checked" : "" %>>
+                    Engineer
+                </label>
+
+                <label>
+                    <input type="checkbox" name="department" value="Others"
+                        <%= employee.department.includes("Others") ? "checked" : "" %>>
+                    Others
+                </label>
+            </div>
+        </div>
+
+        <!-- Salary -->
+        <div class="form-row">
+            <label>Salary</label>
+            <select name="salary">
+                <option value="10000" <%= employee.salary == 10000 ? "selected" : "" %>>10000</option>
+                <option value="20000" <%= employee.salary == 20000 ? "selected" : "" %>>20000</option>
+                <option value="30000" <%= employee.salary == 30000 ? "selected" : "" %>>30000</option>
+                <option value="40000" <%= employee.salary == 40000 ? "selected" : "" %>>40000</option>
+                <option value="50000" <%= employee.salary == 50000 ? "selected" : "" %>>50000</option>
+            </select>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-row">
+            <label>Notes</label>
+            <textarea name="notes" rows="4"><%= employee.notes %></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <a href="/" class="cancel">Cancel</a>
+            <button type="submit">Update</button>
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
